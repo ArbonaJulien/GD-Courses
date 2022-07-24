@@ -1,0 +1,845 @@
+// Colors
+$orange-color: #DA722C;
+$blue-color: #057ADA;
+$darkBlue-color: #023047;
+$lightBlue-color: #6F7DFB;
+$light-color: #EAF7FB;
+$dark-color: #070917;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 200%;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 125%;
+}
+
+h2 {
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 70px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+h4 {
+    
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.wrapper {
+    max-width: 1366px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+header {
+    background: url('../src/hero-image.png') no-repeat right 70px bottom, linear-gradient(180deg, #6F7DFB 0%, #263080 100%);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    & .nav-container.scrolled {
+        background: rgba($color: $dark-color, $alpha: .92);
+        transition: background .5s;
+        border-bottom: 4px solid white;
+    }
+    
+    & .nav-container {
+        background-color: none;
+        position: fixed;
+        width: 100%;
+        z-index: 50;
+        
+        & nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0 15px 0;
+            margin: auto;
+            width: 1366px;
+            
+            & .logo {
+                align-self: center;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 900;
+                font-size: 40px;
+                color: #FFFFFF;
+            }
+            
+            & ul {
+                display: flex;
+                align-items: center;
+                gap: 60px;
+                
+                & li {
+                    font-weight: 700;
+                    font-size: 16px;
+                    
+                    & a {
+                        color: #FFFFFF;
+                    }
+                    
+                    & button {
+                        &.dark {
+                            background: $darkBlue-color;
+                        }
+                        
+                        &.light {
+                            background-color: $orange-color;
+                            transition: background 1s;
+                        }
+                        
+                    }
+                }
+            }
+
+            & .menu-burger {
+                display: none;
+            }
+        }
+    }
+}
+
+button {
+    display: flex;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 24px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+
+    &.dark {
+        background: $darkBlue-color;
+    }
+
+    &.light {
+        background-color: $orange-color;
+    }
+
+    &.enrol-icon::before {
+        content: url('../src/enrol-icon.svg');
+        margin-right: 10px;
+    }
+}
+
+.heroSection {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    & .left {
+        flex-grow: 1;
+
+        & h1 {
+            color: #FFFFFF;
+        }
+
+        & p {
+            max-width: 450px;
+            margin: 16px 0;
+            color: #FFFFFF;
+        }
+    }
+
+    & .right {
+        align-self: flex-end;
+
+        & img {
+            vertical-align: middle;
+            height: 750px;
+        }
+    }
+
+    & .achievementCards {
+        font-weight: 400;
+        font-size: 16px;
+        color: #023047;
+
+        & .content {
+            position: relative;
+            background-color: #fff;
+            border-radius: 24px;
+            padding: 16px 32px;
+            z-index: 10;
+        }
+
+        & .content div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &__studentsEnrolled {
+            position: absolute;
+            left: 50%;
+            top: 272px;
+        }
+
+        &__studentsEnrolled::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background: linear-gradient(180deg, #6F7DFB 0%, #3B448F 100%);
+            width: 100%;
+            height: 100%;
+            top: 10px;
+            left: 10px;
+            border-radius: 24px;
+        }
+
+        &__overallRating {
+            position: absolute;
+            left: 42%;
+            top: 600px;
+        }
+
+        &__overallRating::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background: linear-gradient(180deg, #6F7DFB 0%, #3B448F 100%);
+            width: 100%;
+            height: 100%;
+            top: 10px;
+            left: 10px;
+            border-radius: 24px;
+        }
+    }
+}
+
+.testimonialsSection {
+    margin: 100px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    position: relative;
+
+
+    & .left::before {
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 100%;
+        left: 70px;
+        background-color: $darkBlue-color;
+        border-radius: 24px;
+        z-index: -5;
+    }
+
+    &__card {
+        position: relative;
+        width: 500px;
+        font-family: 'Raleway', sans-serif;
+        box-shadow: 0px 9px 36px rgba(0, 0, 0, 0.2);
+        margin-bottom: 60px;
+        border-radius: 24px;
+        z-index: 10;
+
+
+        & .content {
+            padding: 24px 32px;
+            background-color: $lightBlue-color;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 150%;
+            color: #FFFFFF;
+            border-radius: 24px;
+        }
+
+        & .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 32px 24px 32px;
+            color: $darkBlue-color;
+            background-color: #fff;
+            font-weight: 400;
+            font-size: 18px;
+            border-radius: 24px;
+
+            & h4 {
+                margin-bottom: 10px;
+            }
+
+            & img {
+                width: 120px;
+                height: auto;
+                align-self: flex-start;
+                margin-top: -24px;
+                border-radius: 60px;
+                border: 4px solid #fff;
+            }
+        }
+    }
+
+    &__card:first-child {
+        margin-top: 30px;
+    }
+
+    &__card:last-child {
+        margin-bottom: 30px;
+    }
+
+    &__card:nth-child(even) {
+        margin-left: 30px;
+
+        & .content {
+            background-color: $orange-color;
+        }
+    }
+
+    & .right {
+        align-self: center;
+        max-width: 560px;
+
+        & h2 {
+            color: #023047;
+        }
+
+        & div {
+            margin: 30px 0;
+
+            & p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 200%;
+                color: #023047;
+            }
+        }
+    }
+}
+
+.coursesSection {
+    padding: 70px 0;
+    background: linear-gradient(180deg, #6F7DFB 0%, #263080 100%);
+
+    & h2 {
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+
+        &__cards {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1100px;
+            gap: 30px;
+            margin-top: 60px;
+            margin: auto;
+
+            &__card {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                background-color: #fff;
+                border-radius: 24px;
+                padding: 0 32px;
+
+                & img {
+                    width: 460px;
+                    height: 260px;
+                    border-radius: 24px;
+                    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+                }
+
+                & .info {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-family: 'Raleway', sans-serif;
+                    margin: 25px 0 32px 0;
+                    color: $darkBlue-color;
+
+                    & h3 {
+                        flex-grow: 2;
+                        max-width: 370px;
+                        line-height: 150%;
+                    }
+
+                    & .duration {
+                        align-self: center;
+                        font-weight: 900;
+                        font-size: 16px;
+                        text-transform: uppercase;
+                    }
+
+                    & .duration::before {
+                        content: url('../src/clock-icon.svg');
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 6px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            &__card::before {
+                content: '';
+                position: absolute;
+                width: calc(100% - 64px);
+                height: 8px;
+                bottom: 0;
+                background-color: $darkBlue-color;
+                border-radius: 24px;
+            }
+        }
+
+        & .btn-container {
+            display: flex;
+            max-width: 1100px;
+            margin-top: 50px;
+
+            & .spacer {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+.appSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px 0;
+    color: $darkBlue-color;
+
+    h2 {
+        margin-bottom: 40px;
+        text-align: center;
+
+        color: $darkBlue-color;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 30px;
+        margin-top: 60px;
+
+        &__button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 20px;
+            color: white;
+            background-color: $dark-color;
+            font-size: 24px;
+        }
+    }
+}
+
+footer {
+    background-color: $dark-color;
+    color: white;
+
+    & .linkContainer {
+        display: flex;
+        padding: 70px 0 0 115px;
+        gap: 100px;
+
+        &__links {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                color: $orange-color;
+                margin-bottom: 36px;
+            }
+
+            ul {
+                margin-left: 15px;
+                & a {
+                    color: white;
+                }
+
+                li:not(:first-child) {
+                    margin: 15px 0;
+                }
+            }
+
+            & .social {
+                margin-left: 15px;
+                a {
+                    img {
+                        padding: 8px;
+                    }
+                }
+
+                a:first-child {
+                    margin-right: 20px;
+                }
+            }
+
+            & form {
+                display: flex;
+                border-radius: 8px;
+                margin-left: 15px;
+                background-color: #D9D9D9;
+
+                & input {
+                    flex-grow: 1;
+                    padding: 4px 24px;
+                    color: $dark-color;
+                    border: none;
+                    background: transparent;
+                    height: 35px;
+                }
+                & button {
+                    align-self: center;
+                    background-color: $darkBlue-color;
+                    color: white;
+                    font-size: 12px;
+                    border-radius: 8px;
+                    margin: 0 5px;
+                    padding: 6px 20px;
+                }
+            }
+        }
+
+    }
+    
+    & .copyright {
+        padding: 50px 0 70px 115px;
+    }
+}
+
+@media  screen and (max-width: 1400px) {
+    header {
+        & .nav-container {
+            & nav {
+                margin: 0 60px;
+                width: unset;
+            }
+        }
+    }
+
+    .wrapper {
+        max-width: unset;
+        margin: 0 60px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    h2 {
+        
+        font-size: 40px;
+        line-height: 47px;
+    }
+
+    .wrapper {
+        margin: 0 100px;
+    }
+
+    .heroSection {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 215px;
+        & .left {
+            & p {
+                margin: 15px 0 40px 0;
+            }
+        }
+
+        & .right {
+            display: none;
+        }
+
+        & .achievementCards {
+            &__studentsEnrolled {
+                top: 490px;
+                left: 38%;
+            }
+
+            &__overallRating{
+                top: 650px;
+                left: 30%;
+            }
+        }
+    }
+
+    .testimonialsSection {
+        flex-direction: column-reverse;
+        
+        & .right {
+            & button {
+                margin: auto;
+            }
+        }
+
+        & .left::before {
+            height: 537px;
+            position: absolute;
+        }
+
+        & .left {
+            & .testimonialsSection__card {
+                width: unset;
+            }
+
+            & .testimonialsSection__card:nth-child(even) {
+                margin: 0;
+            }
+        }
+    }
+    
+    .coursesSection__container__cards {
+        flex-direction: column;
+        margin: 0;
+        &__card {
+            & img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    footer .linkContainer {
+        flex-wrap: wrap;
+        gap: 0px;
+
+        &__links:first-child {
+            margin: 0 160px 60px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    button {
+        font-size: 16px;
+    }
+
+    header {
+        background: url('../src/hero-image.png') no-repeat right bottom, linear-gradient(180deg, #6F7DFB 0%, #263080 100%);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    .wrapper {
+        margin: 0 24px;
+    }
+
+    header {
+        position: relative;
+        height: unset;
+        background: url('../src/hero-image.png') no-repeat right 50px bottom / 270px auto, linear-gradient(180deg, #6F7DFB 0%, #263080 100%);
+        
+        & .nav-container {
+            & nav {
+                margin: 0 24px;
+                & .logo {
+                    font-size: 36px;
+                }
+
+                & ul {
+                    display: none;
+                }
+
+                & .menu-burger {
+                    display: block;
+
+                    & input[type='checkbox'] {
+                        display: none;
+                    }
+
+                    & input[type='checkbox']:checked + .menu-burger__content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    & input[type='checkbox']:checked + .menu-burger__content ul li {
+                        display: block;
+                    }
+
+                    & input[type='checkbox']:checked + .menu-burger__content ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                    }
+
+                    & label[for='btn_menuBurger'] {
+                        position: relative;
+                        z-index: 100;
+                    }
+                    
+
+                    &__content {
+                        display: none;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        background-color: $dark-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .heroSection {
+            padding-top: 170px;
+            & .left {
+                flex-grow: unset;
+
+                & p {
+                    max-width: unset;
+                }
+                & button {
+                    margin: auto;
+                }
+            }
+
+            & .achievementCards {
+                margin: 75px 0 50px 70px;
+                &__studentsEnrolled, &__overallRating {
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                }
+
+                &__studentsEnrolled {
+                    margin-bottom: 50px;
+                }
+            }
+
+            & .content {
+                & p {
+                    font-size: 12px;
+                }
+                & img {
+                    width: 32px;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .appSection {
+        &__buttons {
+            flex-direction: column;
+        }
+    }
+
+    footer {
+        text-align: center;
+        & .linkContainer {
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: nowrap;
+            padding: 50px 0 0 0;
+            
+            &__links:first-child {
+                margin: 0;
+            }
+
+            &__links {
+                margin-top: 25px;
+                & ul {
+                    margin: 0;
+                }
+
+                & .social {
+                    margin: 0;
+                }
+
+                & form {
+                    flex-direction: column;
+                    background-color: $dark-color;
+                    margin: 0;
+                    & input {
+                        width: 100%;
+                        background-color: #D9D9D9;
+                        border-radius: 8px;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+        }
+
+        & .copyright {
+            margin-top: 20px;
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        position: relative;
+        height: unset;
+        background: url('../src/hero-image.png') no-repeat right -50px bottom / 270px auto, linear-gradient(180deg, #6F7DFB 0%, #263080 100%);
+
+
+        .heroSection {
+            
+            
+            & .achievementCards {
+                margin: 75px 0 50px 0;
+            }
+        }
+    }
+}
