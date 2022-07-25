@@ -15,11 +15,9 @@ function myFunction() {
 
 document.querySelector('input#btn_menuBurger').addEventListener('change', (e) => {
   if(e.currentTarget.checked) {
-    // console.log('Checked !');
-    document.querySelector('label[for=' + e.currentTarget.id + '] img').src = '/src/close-icon.svg';
+    document.querySelector('label[for=' + e.currentTarget.id + '] img').src = 'src/close-icon.svg';
   } else {
-    // console.log('Not Checked !');
-    document.querySelector('label[for=' + e.currentTarget.id + '] img').src = '/src/burgerMenu-icon.svg';
+    document.querySelector('label[for=' + e.currentTarget.id + '] img').src = 'src/burgerMenu-icon.svg';
 
   }
 });
